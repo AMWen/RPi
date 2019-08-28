@@ -1,0 +1,55 @@
+#cloud-config
+# vim: syntax=yaml
+#
+
+# Set your hostname here
+hostname: e16dev
+bootcmd:
+  - [ ifup, wlan0 ]
+  - [ bash, /etc/firstboot.d/10-resize-rootdisk ]
+
+wifi:
+  interfaces:
+    wlan0:
+      ssid: “woopingcough”
+      password: “blacklake311”
+preserve_hostname: true
+manage_etc_hosts: false
+manage_resolv_conf: false
+apt_preserve_sources_list: true
+
+# You could modify this for your own user information
+users:
+  - name: e16
+    primary-group: e16
+    gecos: "E16 User"
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    groups: users,docker,adm,dialout,audio,plugdev,netdev,video
+    lock_passwd: true
+    ssh-import-id: None
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCbzE/Do7+QHuZPpZux2Ipq7fdD0+mhiwkisSVXjbno6JzveE6geI3XdMtX7yGV2NRe8fzgeKYDJnqxoIDIKkWtDBogUH0NDon76a9JmVk2eRqqENrlUzWZ7LeklmJP9F3S2L7Q0HhowQkbtN9Ms83zUYM6XrmgT+sVOqabRSMcnKyGV/YMdELarU1M+XhFtmZI/aEN5cBtoh3RqU1tRDmobmf8rOoMhjo7fr8ZMMn0azMi0bu2XQUcmn+W4WI7WhzQyz6cc1aAVgojDX2wtZ3LFkrzEjqED6GzHpmRkd+l9ncrJ1Fo4jVbbfSIcFkxT1SYR0fpZeIikDRQLOqT9jBSb6dAv2oCU0uXOq3m9FF0VfGtNrQkXGfjwOIy2rN77cUjB+qTegRDjsp4rv4KlEjCS7Z/nX7yzCx2SSwtZ20UQPHi2HcbeP+4HcS7p9rvDUBVPvvkbZUzn75qghziVwbPx9znpJ657JOrg7YN/mjGfV/L9zosXbEYv+fIxrbkujtFO6Amirdsi3iyHIQcwwKFhGJG1S4mj/L4w6Czmqk4vK56Y/WjfH2bigfs1iOUdunqLxtiahOlFO8a6yPwQg+dbktiYBWcUlU6TPL+Zjz48PcRq8qEWHGDw0Ih8D71NpDRwOGt/SdktFoQU2tWu0pYNNvT8NlUKXFT6dUk6Gsk+Q== wyssuser@itadmin-6.local
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDR2/jKggM+GlL0tzcb+GMSN3iGTjlG07iiAyOiF5c8hd71wJxjAjJJPptqRYlHgONmioBqgw3hC2Zb7ics34r6mw+luLVVkjDo+KE5DjCXUdVd9R2WJcaoFkEnIks8shFubYpFKD/8f9fLkC1Kg+PXXhNmnV4IfiCfm0+Vutra/RBuVJJMYN98o7+Z0Z84nhdUCCITxDHaFucCrjcCbs7r/+HxX81VDYvUMeh0wqqZL8gWgyUp+lNP4ugHxiAaXK66sWffqW0mUCJOtntVvqltHV1k+GbZZNeR39eCK0LJ1rqEtUxmK9PCAT4YSYGjNdlt54toOthwCuuxaGWuMaxH b8:27:eb:01:58:e1
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC4JF1iXi40giRC8e08NazNiggIeZSfXCBx+rI2V+L5bEwzymJyboJB2huMNZAQJNPTs+Mqd1HF+ku0YTuNQfMYfG1HQRGEBteyT4eaYsj4bveM+w6ocF2NywtdUXVutd3YuuQ610gXxMQIbJsd8UCpYhmlb/d/qUTq1xq2PrgZVmAK8pJke4EH30lI1HScoktHR3L/QzjQC8n3DDmmjpprN99fKwD6nY3u8+5WcPtiYbw9xxk0JdauU43p8nMJHtbli59ci5Vcgbfzu2o7SUn1/XCH1VWV7EYpimje5Tr8nB5zE8ltUKj44SfSyipBodlL5B5f4eGiMkU7W/bbHjoy0nZx1x4+I1BKWJaVdMfMe20lvEL057gwiX7g/555WJEwQLWN58+gterY4v1AXN/TUSqS59pxP+KhM8qTUcNKSceAa3HJpYqIStE0GI8iDEJ+SSrOW0ZwJWOUXembrx+oMj6PGCpZTxPwJNhbfsG8MUZ5bqaITWeQmD9FaJC1o/fEG3pRAdTajOSujDKbYQcHgw9P0mI5i5GT/udg8HA84OUXnW0MrHbLPhDikRdfgbYB2dUTyH62rfCRalrKwi6qZa2MWTAHIRFeCki58Y16yabMwUXCkzPAPNKu0X2yic1VT/qgqC5yVflcIF0JkqBcWnkK4lJFQ4MUvtmb86oL3w== jcollas@monolith.lan
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDMX+cLaGg20eWfQA2tYbJosJw4wwa5KYj3egC7xUpm8SpJV7vtcmf7T8sj3L8i8qsXTywdicbqYll8I//nAWFh4GrcWgjBH5XecMzwh2QkcNSGxyraIDuDQAvr1X8vfZpdPOJxLgqYWbI816/vXfzfjMQ9EFXlrTPZDfgEN2RKCgz+VUF0CpXMKOt8ydfCvPK2IS4qfYZpZpohfSveTKzF1DtAug8CrnF6khVEujKnhYVUIqnUi9eVcE+7h6z0CElPCiJLkMMsw3p6zSrvbpI6EBFU7G0IJFlBtmzjkJVvauz0+IMajLAUavsrOPtqCGY2ophU4EuUi9oznva6u1iJU4PikTmIarZQR76HCwN5eopx3jWtEu3Iz/ZAfEdUmadotaYMdWiFdag2AdL+ZVkcgYoYpGxXmsFIrD9JZaeUG/0pLrfEsS/HgeFhXUtuyN5eEVyWbOJ7ttp2VCi+u3pQ7POE/H80BpRsi0txwyp61K2rJNVeIB8PpHMpZZDcez8hL5hzLrjQ5A9EpAdaONxc456QBrRokH3IH3NaOoRFeLlvRZKHXcNkKhMj8kGel+i6YAJHIV+jEqQrFnX7QyeXn5W9ae99BXYHg7NRD3wsEhDIz5rRuX111icu5D9I/2LcWII0G6ksroNKPndrCAqtK6dGlVjkNH4mOlNlWko4tw== jp@Jps-MacBook-Pro.local
+resolv_conf:
+  - nameservers: ['8.8.4.4', '8.8.8.8']
+    options:
+      rotate: true
+      timeout: 1
+
+# # Set the locale of the system
+locale: "en_US.UTF-8"
+
+# # Set the timezone
+# # Value of 'timezone' must exist in /usr/share/zoneinfo
+timezone: "America/New_York"
+
+# # Update apt packages on first boot
+package_update: false
+package_upgrade: false
+package_reboot_if_required: false
+
+
+

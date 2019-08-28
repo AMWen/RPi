@@ -1,0 +1,92 @@
+#cloud-config
+# vim: syntax=yaml
+#
+
+# The current version of cloud-init in the Hypriot rpi-64 is 0.7.9
+# When dealing with cloud-init, it is SUPER important to know the version
+# I have wasted many hours creating servers to find out the module I was trying to use wasn't in the cloud-init version I had
+# Documentation: http://cloudinit.readthedocs.io/en/0.7.9/index.html
+
+# Set your hostname here, the manage_etc_hosts will update the hosts file entries as well
+hostname: blucycles64
+manage_etc_hosts: true
+
+# You could modify this for your own user information
+users:
+  - name: blucycles
+    primary-group: blucycles
+    gecos: "Blucycles User"
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    groups: users,docker,adm,dialout,audio,plugdev,netdev,video
+    lock_passwd: true
+    ssh-import-id: None
+    ssh-authorized-keys:
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDR2/jKggM+GlL0tzcb+GMSN3iGTjlG07iiAyOiF5c8hd71wJxjAjJJPptqRYlHgONmioBqgw3hC2Zb7ics34r6mw+luLVVkjDo+KE5DjCXUdVd9R2WJcaoFkEnIks8shFubYpFKD/8f9fLkC1Kg+PXXhNmnV4IfiCfm0+Vutra/RBuVJJMYN98o7+Z0Z84nhdUCCITxDHaFucCrjcCbs7r/+HxX81VDYvUMeh0wqqZL8gWgyUp+lNP4ugHxiAaXK66sWffqW0mUCJOtntVvqltHV1k+GbZZNeR39eCK0LJ1rqEtUxmK9PCAT4YSYGjNdlt54toOthwCuuxaGWuMaxH b8:27:eb:01:58:e1
+
+
+# # Set the locale of the system
+locale: "en_US.UTF-8"
+
+# # Set the timezone
+# # Value of 'timezone' must exist in /usr/share/zoneinfo
+timezone: "America/New_York"
+
+# # Update apt packages on first boot
+package_update: true
+package_upgrade: true
+package_reboot_if_required: true
+#package_upgrade: false
+
+# # Install any additional apt packages you need here
+packages:
+  - emacs25-nox daemontools ufw 
+
+# # WiFi connect to HotSpot
+# To make wifi work with RPi3 and RPi0
+# you also have to set "enable_uart=0" in config.txt
+# See no-uart-config.txt for an example.
+#
+# # - use `wpa_passphrase SSID PASSWORD` to encrypt the psk
+write_files:
+  - content: |
+      allow-hotplug wlan0
+      iface wlan0 inet dhcp
+      wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+      iface default inet dhcp
+    path: /etc/network/interfaces.d/wlan0
+  - content: |
+      country=US
+      ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+      update_config=1
+      network={
+      ssid="6WD2B"
+      psk="YWBMVT6Y4T5YW4MQ"
+      proto=RSN
+      key_mgmt=WPA-PSK
+      pairwise=CCMP
+      auth_alg=OPEN
+      }
+    path: /etc/wpa_supplicant/wpa_supplicant.conf
+# These commands will be ran once on first boot only
+runcmd:
+  # Pickup the hostname changes
+  - 'systemctl restart avahi-daemon'
+
+  # Activate WiFi interface
+  - 'ifup wlan0'
+
+  # Disable system port login
+  - 'systemctl stop getty@tty1.service'
+  - 'systemctl disable getty@tty1.service'
+
+  # disable bluetooth (except for us)
+  - 'update-rc.d bluetooth remove'
+  - 'hciconfig hci0 up'
+
+  # remove the windowing system
+  - 'apt-get --yes purge xserver.* x11-.* xarchiver xauth xkb-data console-setup xinit lightdm lxde.* python-tk python3-tk scratch gtk.* libgtk.* openbox libxt.* lxpanel gnome.* libqt.* gvfs.* xdg-.* desktop.*'
+  - 'apt-get autoremove'
+  - 'apt-get autoclean'
+

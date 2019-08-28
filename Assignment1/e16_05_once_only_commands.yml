@@ -1,0 +1,57 @@
+# These commands will be run once on first boot only
+runcmd:
+  # Pickup the hostname changes
+  - 'systemctl restart avahi-daemon'
+  - 'ifup wlan0'
+
+  # reset the hostname and make it stick
+  - 'e16-setup e16dev'
+
+  # updates
+  - 'apt-get -y update'
+  - 'apt-get -y upgrade'
+  - 'apt-get -y install emacs25-nox openvpn ufw unattended-upgrades apt-listchanges build-essential pass zlib1g-dev'
+
+  # remove the windowing system
+  - 'apt-get autoremove -y'
+  - 'apt-get autoclean -y'
+
+  # write initial file for vpn check
+  - 'date +%s > /var/log/lastVpnCheck'
+
+  # Disable system async port login
+  - 'systemctl stop getty@tty1.service'
+  - 'systemctl disable getty@tty1.service'
+
+  # disable bluetooth (except for us)
+  - 'update-rc.d bluetooth remove'
+  - '/etc/init.d/bluetooth stop'
+
+  # start the vpn keep-up service
+  - 'update-rc.d e16 defaults 98'
+  - 'update-rc.d e16 enable'
+  - '/etc/init.d/e16 start'
+  
+  # setup firewall
+  - 'ufw allow ssh'
+  - 'ufw allow 8080'
+  - 'ufw allow in on docker0'
+  - 'ufw allow out on docker0'
+  - 'ufw allow out 443/udp'
+  - 'ufw allow out 443/tcp'
+  - 'ufw allow 53/udp'
+  - 'ufw allow out 53/udp'
+  - 'ufw allow 53/tcp'
+  - 'ufw allow out 53/tcp'
+  - 'ufw allow 123/udp'
+  - 'ufw allow out 123/tcp'
+  - 'ufw allow in to 224.0.0.0/4'
+  - 'ufw allow in from 224.0.0.0/4'
+  - 'ufw allow out to 224.0.0.0/4'
+  - 'ufw allow out from 224.0.0.0/4'
+  - 'ufw enable'
+
+  # start the vpn
+  - 'systemctl enable openvpn@client.service'
+  - 'systemctl start openvpn@client.service'
+  

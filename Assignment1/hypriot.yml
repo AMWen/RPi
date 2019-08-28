@@ -1,0 +1,420 @@
+#cloud-config
+# vim: syntax=yaml
+#
+
+# Set your hostname here
+hostname: e16dev
+bootcmd:
+  - [ ifup, wlan0 ]
+  - [ bash, /etc/firstboot.d/10-resize-rootdisk ]
+
+wifi:
+  interfaces:
+    wlan0:
+      ssid: “woopingcough”
+      password: “blacklake311”
+preserve_hostname: true
+manage_etc_hosts: false
+manage_resolv_conf: false
+apt_preserve_sources_list: true
+
+# You could modify this for your own user information
+users:
+  - name: e16
+    primary-group: e16
+    gecos: "E16 User"
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    groups: users,docker,adm,dialout,audio,plugdev,netdev,video
+    lock_passwd: true
+    ssh-import-id: None
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCbzE/Do7+QHuZPpZux2Ipq7fdD0+mhiwkisSVXjbno6JzveE6geI3XdMtX7yGV2NRe8fzgeKYDJnqxoIDIKkWtDBogUH0NDon76a9JmVk2eRqqENrlUzWZ7LeklmJP9F3S2L7Q0HhowQkbtN9Ms83zUYM6XrmgT+sVOqabRSMcnKyGV/YMdELarU1M+XhFtmZI/aEN5cBtoh3RqU1tRDmobmf8rOoMhjo7fr8ZMMn0azMi0bu2XQUcmn+W4WI7WhzQyz6cc1aAVgojDX2wtZ3LFkrzEjqED6GzHpmRkd+l9ncrJ1Fo4jVbbfSIcFkxT1SYR0fpZeIikDRQLOqT9jBSb6dAv2oCU0uXOq3m9FF0VfGtNrQkXGfjwOIy2rN77cUjB+qTegRDjsp4rv4KlEjCS7Z/nX7yzCx2SSwtZ20UQPHi2HcbeP+4HcS7p9rvDUBVPvvkbZUzn75qghziVwbPx9znpJ657JOrg7YN/mjGfV/L9zosXbEYv+fIxrbkujtFO6Amirdsi3iyHIQcwwKFhGJG1S4mj/L4w6Czmqk4vK56Y/WjfH2bigfs1iOUdunqLxtiahOlFO8a6yPwQg+dbktiYBWcUlU6TPL+Zjz48PcRq8qEWHGDw0Ih8D71NpDRwOGt/SdktFoQU2tWu0pYNNvT8NlUKXFT6dUk6Gsk+Q== wyssuser@itadmin-6.local
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDR2/jKggM+GlL0tzcb+GMSN3iGTjlG07iiAyOiF5c8hd71wJxjAjJJPptqRYlHgONmioBqgw3hC2Zb7ics34r6mw+luLVVkjDo+KE5DjCXUdVd9R2WJcaoFkEnIks8shFubYpFKD/8f9fLkC1Kg+PXXhNmnV4IfiCfm0+Vutra/RBuVJJMYN98o7+Z0Z84nhdUCCITxDHaFucCrjcCbs7r/+HxX81VDYvUMeh0wqqZL8gWgyUp+lNP4ugHxiAaXK66sWffqW0mUCJOtntVvqltHV1k+GbZZNeR39eCK0LJ1rqEtUxmK9PCAT4YSYGjNdlt54toOthwCuuxaGWuMaxH b8:27:eb:01:58:e1
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC4JF1iXi40giRC8e08NazNiggIeZSfXCBx+rI2V+L5bEwzymJyboJB2huMNZAQJNPTs+Mqd1HF+ku0YTuNQfMYfG1HQRGEBteyT4eaYsj4bveM+w6ocF2NywtdUXVutd3YuuQ610gXxMQIbJsd8UCpYhmlb/d/qUTq1xq2PrgZVmAK8pJke4EH30lI1HScoktHR3L/QzjQC8n3DDmmjpprN99fKwD6nY3u8+5WcPtiYbw9xxk0JdauU43p8nMJHtbli59ci5Vcgbfzu2o7SUn1/XCH1VWV7EYpimje5Tr8nB5zE8ltUKj44SfSyipBodlL5B5f4eGiMkU7W/bbHjoy0nZx1x4+I1BKWJaVdMfMe20lvEL057gwiX7g/555WJEwQLWN58+gterY4v1AXN/TUSqS59pxP+KhM8qTUcNKSceAa3HJpYqIStE0GI8iDEJ+SSrOW0ZwJWOUXembrx+oMj6PGCpZTxPwJNhbfsG8MUZ5bqaITWeQmD9FaJC1o/fEG3pRAdTajOSujDKbYQcHgw9P0mI5i5GT/udg8HA84OUXnW0MrHbLPhDikRdfgbYB2dUTyH62rfCRalrKwi6qZa2MWTAHIRFeCki58Y16yabMwUXCkzPAPNKu0X2yic1VT/qgqC5yVflcIF0JkqBcWnkK4lJFQ4MUvtmb86oL3w== jcollas@monolith.lan
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDMX+cLaGg20eWfQA2tYbJosJw4wwa5KYj3egC7xUpm8SpJV7vtcmf7T8sj3L8i8qsXTywdicbqYll8I//nAWFh4GrcWgjBH5XecMzwh2QkcNSGxyraIDuDQAvr1X8vfZpdPOJxLgqYWbI816/vXfzfjMQ9EFXlrTPZDfgEN2RKCgz+VUF0CpXMKOt8ydfCvPK2IS4qfYZpZpohfSveTKzF1DtAug8CrnF6khVEujKnhYVUIqnUi9eVcE+7h6z0CElPCiJLkMMsw3p6zSrvbpI6EBFU7G0IJFlBtmzjkJVvauz0+IMajLAUavsrOPtqCGY2ophU4EuUi9oznva6u1iJU4PikTmIarZQR76HCwN5eopx3jWtEu3Iz/ZAfEdUmadotaYMdWiFdag2AdL+ZVkcgYoYpGxXmsFIrD9JZaeUG/0pLrfEsS/HgeFhXUtuyN5eEVyWbOJ7ttp2VCi+u3pQ7POE/H80BpRsi0txwyp61K2rJNVeIB8PpHMpZZDcez8hL5hzLrjQ5A9EpAdaONxc456QBrRokH3IH3NaOoRFeLlvRZKHXcNkKhMj8kGel+i6YAJHIV+jEqQrFnX7QyeXn5W9ae99BXYHg7NRD3wsEhDIz5rRuX111icu5D9I/2LcWII0G6ksroNKPndrCAqtK6dGlVjkNH4mOlNlWko4tw== jp@Jps-MacBook-Pro.local
+resolv_conf:
+  - nameservers: ['8.8.4.4', '8.8.8.8']
+    options:
+      rotate: true
+      timeout: 1
+
+# # Set the locale of the system
+locale: "en_US.UTF-8"
+
+# # Set the timezone
+# # Value of 'timezone' must exist in /usr/share/zoneinfo
+timezone: "America/New_York"
+
+# # Update apt packages on first boot
+package_update: false
+package_upgrade: false
+package_reboot_if_required: false
+
+
+
+write_files:
+  - content: |
+      country=US
+      ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+      update_config=1
+      network={
+        ssid=“woopingcough”
+        psk=“blacklake311”
+      }
+    path: /etc/wpa_supplicant/wpa_supplicant.conf
+  - content: |
+      allow-hotplug wlan0
+      iface wlan0 inet dhcp
+          wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+      iface default inet dhcp
+    path: /etc/network/interfaces.d/wlan0
+    permissions: '0644'
+    owner: 'root:root'
+  - content: |
+      e16dev
+    path: /etc/hostname
+    permissions: '0644'
+    owner: 'root:root'
+  - content: |
+      # Your system has configured 'manage_etc_hosts' as True.
+      # As a result, if you wish for changes to this file to persist
+      # then you will need to either
+      # a.) make changes to the master file in /etc/cloud/templates/hosts.tmpl
+      # b.) change or remove the value of 'manage_etc_hosts' in
+      #     /etc/cloud/cloud.cfg or cloud-config from user-data
+      #
+      127.0.1.1 e16dev
+      127.0.0.1 localhost
+      
+      # The following lines are desirable for IPv6 capable hosts
+      ::1 ip6-localhost ip6-loopback
+      fe00::0 ip6-localnet
+      ff00::0 ip6-mcastprefix
+      ff02::1 ip6-allnodes
+      ff02::2 ip6-allrouters
+      ff02::3 ip6-allhosts
+      
+    path: /etc/hosts
+    permissions: '0644'
+    owner: 'root:root'
+  - content: |
+      #!/bin/sh
+      HOST_SN=`cat /proc/cpuinfo | grep Serial | cut -d ' ' -f 2 | sed s/^0*// |tr '[:lower:]' '[:upper:]'`
+      DEC=`echo $((0x${HOST_SN}))`
+      DEVICE_ID=`/sbin/ifconfig eth0 | /bin/grep ether | /usr/bin/awk '{print $2}'`
+      HOST_NAME=`/bin/hostname`
+      echo "$HOST_NAME","0x$HOST_SN","0d$DEC","$DEVICE_ID"
+    path: /usr/local/bin/e16-info
+    permissions: '0555'
+    owner: 'root:root'
+  - content: |
+      ping_time=`/bin/ping -D -c 1 10.8.0.1 | grep ']' | cut -d ']' -f 1 | cut -d '[' -f 2 | cut -d '.' -f 1`
+      if [ -z "$ping_time" ]; then
+         exit
+      fi
+      /bin/echo $ping_time > /var/log/lastVpnCheck
+    path: /usr/local/bin/e16-vpnping
+    permissions: '0555'
+    owner: 'root:root'
+  - content: |
+      #!/bin/bash
+      # How many minutes to allow to pass before rebooting the machine?
+      MAX_MINUTES_RESTART_VPN=60  #1 hours
+      MAX_MINUTES_RESTART_PI=1440 #24 hours
+      
+      # How many minutes of warning (broadcast to logged in users) before actual reboot?
+      MINUTES_OF_WARNING_BEFORE_REBOOT=2
+      
+      # Obtain the time when this script was last touched
+      t_last_touch=`cat /var/log/lastVpnCheck`
+      if [ $t_last_touch == "" ]; then
+          t_last_touch=0
+      fi
+      
+      t_now=`date +%s`
+      
+      # Calculate the difference in seconds between
+      # the current time and the time of the last touch
+      let t_diff_sec=$(( $t_now - $t_last_touch ))
+      
+      
+      # Calculate the difference in minutes
+      let t_diff_min=$(( $t_diff_sec / 60 ))
+      
+      # Display the elpased time
+      echo Time elapsed since the last vpn contact: $t_diff_min minutes, $t_diff_sec seconds
+      
+      if (( $t_diff_min >= $MAX_MINUTES_RESTART_PI ))
+      then
+          echo $t_now > /var/log/lastSuccessfulVpnContact
+          /sbin/shutdown -r +$MINUTES_OF_WARNING_BEFORE_REBOOT
+      fi
+      
+      if (( $t_diff_min >= $MAX_MINUTES_RESTART_VPN ))
+      then
+          /bin/systemctl restart openvpn@client.service
+      fi
+    path: /usr/local/bin/e16-vpncheck
+    permissions: '0555'
+    owner: 'root:root'
+  - content: |
+      #!/bin/bash
+      
+      if [ -z "$1" ]; then
+      #    echo Host name prefix required
+          exit
+      fi
+      
+      OLD_HOST=`cat /etc/hostname`
+      HOST_SN=`cat /proc/cpuinfo | grep Serial | cut -d ' ' -f 2 | sed s/^0*// |tr '[:lower:]' '[:upper:]'`
+      HOST_NAME=$1-$HOST_SN
+      
+      if [ "$OLD_HOST" != "$HOST_NAME" ]; then
+          sed s/e16/$HOST_NAME/ /etc/hostname > /tmp/hostname
+          sed s/e16/$HOST_NAME/g /etc/hosts > /tmp/hosts
+          hostname $HOST_NAME
+          cp /tmp/hostname /etc/hostname
+          rm /tmp/hostname
+          chown root.root /etc/hostname
+          cp /tmp/hosts /etc/hosts
+          rm /tmp/hosts
+          chown root.root /etc/hosts
+      #else
+      #    echo Hostname correct
+      fi
+    path: /usr/local/bin/e16-setup
+    permissions: '0555'
+    owner: 'root:root'
+  - content: |
+      # DO NOT EDIT THIS FILE - edit the master and reinstall.
+      # (/tmp/crontab.c0HMAQ/crontab installed on Sat Nov 24 14:34:39 2018)
+      # (Cron version -- $Id: crontab.c,v 2.13 1994/01/17 03:20:37 vixie Exp $)
+      # Edit this file to introduce tasks to be run by cron.
+      # 
+      # Each task to run has to be defined through a single line
+      # indicating with different fields when the task will be run
+      # and what command to run for the task
+      # 
+      # To define the time you can provide concrete values for
+      # minute (m), hour (h), day of month (dom), month (mon),
+      # and day of week (dow) or use '*' in these fields (for 'any').# 
+      # Notice that tasks will be started based on the cron's system
+      # daemon's notion of time and timezones.
+      # 
+      # Output of the crontab jobs (including errors) is sent through
+      # email to the user the crontab file belongs to (unless redirected).
+      # 
+      # For example, you can run a backup of all your user accounts
+      # at 5 a.m every week with:
+      # 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+      # 
+      # For more information see the manual pages of crontab(5) and cron(8)
+      # 
+      # m h  dom mon dow   command
+      * * * * * /usr/local/bin/e16-vpnping
+      */20 * * * * /usr/local/bin/e16-vpncheck
+    path: /var/spool/cron/crontabs/root
+    permissions: '0600'
+    owner: 'root:crontab'
+  - content: |
+      client
+      dev tun
+      proto udp
+      sndbuf 0
+      rcvbuf 0
+      remote 138.197.66.56 443
+      resolv-retry infinite
+      nobind
+      persist-key
+      persist-tun
+      remote-cert-tls server
+      auth SHA512
+      cipher AES-256-CBC
+      setenv opt block-outside-dns
+      key-direction 1
+      verb 3
+      <ca>
+      -----BEGIN CERTIFICATE-----
+      MIIDKzCCAhOgAwIBAgIJAMKsL257C79qMA0GCSqGSIb3DQEBCwUAMBMxETAPBgNV
+      BAMMCENoYW5nZU1lMB4XDTE5MDEyODE5NTk1NFoXDTI5MDEyNTE5NTk1NFowEzER
+      MA8GA1UEAwwIQ2hhbmdlTWUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
+      AQC7+IWdoK+VRo6EthmtN/TNkMICKQjWt2v+B3FyJ9QJI2/mChbeO5UjssjCNV4B
+      5Z1JceCMSPwC6CYpA7U4dCgfcgTWt2LlLgeEFERPzqAekz2pDe5KJwnQ6wT2IBJ0
+      l+3ItrcThJFKl4JKvp0hH0yus1TRG6JiU+4Kp+qJCsA/DxS3fu3/nLMvE7cj3nFm
+      fLsIXHKpfJuKgOk4hTAfFpKTjVpnlHRZ3C7A7tI5bArrWP0WH0n+CsPL37GZANtT
+      0LEOmTmkfqjNWqWEV1tVf97t10bGSgwRONBkrE29KNYt/U/HB5FPO54N4gZM+z/T
+      xRErORVfB9nBteBfqCs/Cc93AgMBAAGjgYEwfzAdBgNVHQ4EFgQU9uc58PGtBu9r
+      x2PRsW97tPTXFZMwQwYDVR0jBDwwOoAU9uc58PGtBu9rx2PRsW97tPTXFZOhF6QV
+      MBMxETAPBgNVBAMMCENoYW5nZU1lggkAwqwvbnsLv2owDAYDVR0TBAUwAwEB/zAL
+      BgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQELBQADggEBAI2ul/0ZNnzosmBbC+Sbv6d2
+      ZhE5Wd00YODBPlKC1m16w4hO7bV3q6P+zZ945jgM5p0Wh4KGwSVs/TbBr6Ozp9nU
+      rIBOin4ota6nyGD/sbeLZv9o3oSfz/5c2MMe1+yWWd+vdWcrsskveWriyL1hPFlU
+      WPUTB1M2w1YvcWWGjtXaQ9ljzjVI/bFL8ZeRtbrK+PHLtrUuEvkP1J62g/qi6Jmi
+      JRWEzQ7S8UdupcpYEi4y1MbwPUFZVF11ybWcWA6d9zdyIOb66KX7sps8h6inFMSc
+      hohW1XYjNWjByPpulex5wc7SpK6Nn/I2NxHvKDezxUGDCGFSJsmk7FovVrL+pNo=
+      -----END CERTIFICATE-----
+      </ca>
+      <cert>
+      -----BEGIN CERTIFICATE-----
+      MIIDQzCCAiugAwIBAgIQDNnNrlGzDu9+M3MKR8W0XzANBgkqhkiG9w0BAQsFADAT
+      MREwDwYDVQQDDAhDaGFuZ2VNZTAeFw0xOTA2MjQwMzE0MTJaFw0yOTA2MjEwMzE0
+      MTJaMBExDzANBgNVBAMMBldlbkFteTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+      AQoCggEBAMMpFJqUCXYkJrL+jgnOAVyL98tMR2PQkkoJ2HABg+3Ph98MQF8HVZeq
+      0lEDeAwpkRUhkFa3TkAG6b05RXBl9DsOn84Ox9+ehfWIhXXa779dPRdLZCmwZciP
+      GgN7V+Rm/IK91IJqAzpd0GCHF3yx0ji1mKd9TvSiON+dHnuWRYBi67HgyMuYpFZK
+      rouu6fXHE62Jcbau0faE3NYqnzZsP9MMV+9aPtF9GyXR1nvzKv6oezm9iNoW5kah
+      6DLhGubmoACQWfKUJSW5gB9WxBcNyfC237vwvL0exJVnIVrk5ZE5aovds1QHA/Gt
+      WFTLVGIazcmbNKHNAsp3qj8oXpzypLMCAwEAAaOBlDCBkTAJBgNVHRMEAjAAMB0G
+      A1UdDgQWBBSj2IHHsJvOxBLA4UGLm/6WeDj+jzBDBgNVHSMEPDA6gBT25znw8a0G
+      72vHY9Gxb3u09NcVk6EXpBUwEzERMA8GA1UEAwwIQ2hhbmdlTWWCCQDCrC9uewu/
+      ajATBgNVHSUEDDAKBggrBgEFBQcDAjALBgNVHQ8EBAMCB4AwDQYJKoZIhvcNAQEL
+      BQADggEBALqO4dHGECT12kIiMyh7D+KZFAy5Es7oUjMlG4CgHC4hSKRba4gi4mWr
+      pfthpw9YY/g8TqBLVbzLviobfGkR+jWt9qKOMzAOpgpqXzjrJCTwSYMbfo1GtOIw
+      IvXlSnFlLyxNQPgHRLhYypgQF9j2+e9LOgUdHBz7Shy6pcfbW2F0cEDqfqB6923P
+      h01vY5+srZd7CZW/VtvANFXnZxq/r7326MxLOXrE3/RDfRLy3mNpltqMjUV/akvj
+      LtpmrPi7WabpTM5h6+rp9h9zWNwoRghnY/Lb8MC1SIIA2OASfLJbaOw43zWp/+XH
+      SjrS0dZXq0xAjECLr8iq6eZ8bVj1E7k=
+      -----END CERTIFICATE-----
+      </cert>
+      <key>
+      -----BEGIN PRIVATE KEY-----
+      MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDDKRSalAl2JCay
+      /o4JzgFci/fLTEdj0JJKCdhwAYPtz4ffDEBfB1WXqtJRA3gMKZEVIZBWt05ABum9
+      OUVwZfQ7Dp/ODsffnoX1iIV12u+/XT0XS2QpsGXIjxoDe1fkZvyCvdSCagM6XdBg
+      hxd8sdI4tZinfU70ojjfnR57lkWAYuux4MjLmKRWSq6Lrun1xxOtiXG2rtH2hNzW
+      Kp82bD/TDFfvWj7RfRsl0dZ78yr+qHs5vYjaFuZGoegy4Rrm5qAAkFnylCUluYAf
+      VsQXDcnwtt+78Ly9HsSVZyFa5OWROWqL3bNUBwPxrVhUy1RiGs3JmzShzQLKd6o/
+      KF6c8qSzAgMBAAECggEBALi1Sc3fbHEHWCUy7aXz9q/rvVQJVsvunHY8iT/A/2d1
+      csg1JTuLioPoZfPND7KbKLhSMvUPupy4rkKsUL9Hj3bRqYfxz1QjCfBQDNh1pVF9
+      4pMIhL08OakvX1SKSa5fln/7QIVJ5tI39j9VvHIFLs0Den6TB8ZbPu7NGwunNxKB
+      Zb6eQmQ20BZc4OvdReGRVr6BOntdAXqXyurDPM3/r2zaZfk2tYBz4+l95C56Jc52
+      yuVldVsGfY1VSLyhhcDEqDb3s4z63LQn+Ykp/cFVcg6v/Gxb6INmHMmRLuYUi3xX
+      GIOhqzsbjVWEN+SKGhnwco72aQYnkVQDeSqauckoC3ECgYEA6dqx19JUpHQfOkbH
+      KfcSeCSsSGbXD1ffQfd14Xwt2k0DG0uKxPQSsORn6qA8zYN+8F0Gw1FGC+XgLS+b
+      VZMK4Pf8NP8xoGrWd7FJts9dIyz1ay9lN70pEIAZgZ5/O7vQuhHuIGnxONaxW4LD
+      BI8OIsf6DMwET79g/RVQQAIjVskCgYEA1aRV9+jc90xQaZKKuSC83nZnJKVKg7fa
+      3FaF7G4qFa8ixMdAmLHWtlKw8KPj4Q8Xn+brTMpJa2jjWcaFz8Bz1sqavuslKhAX
+      P3MRSWiLz2N0aWZhC/NuWIvtpsWTAtmtoI33+0wWU/49b4JQoGeFNtbquT9kstjQ
+      x+yTa4yb0ZsCgYEAgcn7zFGS4pcEQd7IaNUUrhOEfsZ886oMYdtK1HOMK010vPBn
+      OzpPKVgLCKAYPuONTzACMeLoom/ZxJpYdt0eO4/GrU85JtRE5bdCtzBNe9lW+D8c
+      yRu2L8842MSzzt5FUQ/kfp7t32Lgmm5veBdBfDJK6FFOz0fjN3Ndz7igDmkCgYAI
+      zg4Q+pLoykdiInz/Jj9Cd+TGWN2aUiB+Bj7cwKmRXTd0nrWl1WaA+yV5tXd11hZm
+      K7E05/1gpOEB2TG4nzjm+FCqX6yXcDRVFBv5R4rDkFjC40pKoMzCb3nq7qehbXE/
+      dbprq/YbnhXQG7HQ+pM98FuaKOewi0kHhFOLEi910wKBgQCikI9k/guBli75Frlu
+      fRy7e76JmO+JD358HooVRJMisqKx0QOnm3TkLOzlhIkQWlhwzkEAK7c8lTUaOP1Z
+      cvnc5hAz/wC7tCTT+rbxkquT4JUN5QELgJ0AZPbzkZupg5wCCI1d6gPNAQB/GA9C
+      f0sE6arb1Rdx+AZpNoUkyaZRyA==
+      -----END PRIVATE KEY-----
+      </key>
+      <tls-auth>
+      -----BEGIN OpenVPN Static key V1-----
+      abfe3152f3cd62c9f4fee661f80bcda8
+      8dbe2314854b8688733aea3cc07275c0
+      8882453d2a211958b696f2ed646dc618
+      f59ce687b2d7f7bcd15f07025d50a3a9
+      1f893e09dde8387ed8bd2e375c0e1cc1
+      438c4c863330f19101d409058cc8eabe
+      e05c9e8c846417e7464df699a317c072
+      96bb544bef6f34618c7c5716ebcdc1de
+      e8059aa341872dc7f04be5bf7d3cfd02
+      74699b44d9f7463554708b21ced7aae0
+      f8bb346be8b65e3280f9cd9c34d5e884
+      abfe1b4205f7cf24690be84ecad8068e
+      c9e0f7e50d3f33a6712d74739b03af47
+      a3843b28d49c9c301471f73f8ddc7f75
+      4e16696de0c9d8fc3f11583ccda4d3a7
+      c5d8bde6476eae89843d9498b983aa3e
+      -----END OpenVPN Static key V1-----
+      </tls-auth>
+    path: /etc/openvpn/client.conf
+  - content: |
+      #!/bin/sh
+      #/etc/init.d/e16
+      ### BEGIN INIT INFO
+      # Provides: e16
+      # Required-Start:    $network $remote_fs $syslog ntp docker
+      # Required-Stop:     $network $remote_fs $syslog ntp docker
+      # Default-Start:     2 3 4 5
+      # Default-Stop:
+      # Short-Description: The E16 docker instances
+      ### END INIT INFO
+      set -e
+      
+      export PATH="${PATH:+$PATH:}/usr/sbin:/sbin:/usr/bin:/usr/local/bin"
+
+      case "$1" in
+          start)
+          docker run --restart unless-stopped --detach --name watchtower -v /root/.docker/config.json:/config.json -v /var/run/docker.sock:/var/run/docker.sock v2tec/watchtower:armhf-latest  --cleanup
+          ;;
+          stop)
+          docker stop watchtower
+          docker rm watchtower
+          ;;
+          *)
+          echo "Usage: /etc/init.d/e16 {start|stop}"
+          exit 1
+          ;;
+      esac
+      
+      exit 0
+    path: /etc/init.d/e16
+    permissions: '0755'
+
+# These commands will be run once on first boot only
+runcmd:
+  # Pickup the hostname changes
+  - 'systemctl restart avahi-daemon'
+  - 'ifup wlan0'
+
+  # reset the hostname and make it stick
+  - 'e16-setup e16dev'
+
+  # updates
+  - 'apt-get -y update'
+  - 'apt-get -y upgrade'
+  - 'apt-get -y install emacs25-nox openvpn ufw unattended-upgrades apt-listchanges build-essential pass zlib1g-dev'
+
+  # remove the windowing system
+  - 'apt-get autoremove -y'
+  - 'apt-get autoclean -y'
+
+  # write initial file for vpn check
+  - 'date +%s > /var/log/lastVpnCheck'
+
+  # Disable system async port login
+  - 'systemctl stop getty@tty1.service'
+  - 'systemctl disable getty@tty1.service'
+
+  # disable bluetooth (except for us)
+  - 'update-rc.d bluetooth remove'
+  - '/etc/init.d/bluetooth stop'
+
+  # start the vpn keep-up service
+  - 'update-rc.d e16 defaults 98'
+  - 'update-rc.d e16 enable'
+  - '/etc/init.d/e16 start'
+  
+  # setup firewall
+  - 'ufw allow ssh'
+  - 'ufw allow 8080'
+  - 'ufw allow in on docker0'
+  - 'ufw allow out on docker0'
+  - 'ufw allow out 443/udp'
+  - 'ufw allow out 443/tcp'
+  - 'ufw allow 53/udp'
+  - 'ufw allow out 53/udp'
+  - 'ufw allow 53/tcp'
+  - 'ufw allow out 53/tcp'
+  - 'ufw allow 123/udp'
+  - 'ufw allow out 123/tcp'
+  - 'ufw allow in to 224.0.0.0/4'
+  - 'ufw allow in from 224.0.0.0/4'
+  - 'ufw allow out to 224.0.0.0/4'
+  - 'ufw allow out from 224.0.0.0/4'
+  - 'ufw enable'
+
+  # start the vpn
+  - 'systemctl enable openvpn@client.service'
+  - 'systemctl start openvpn@client.service'
+  

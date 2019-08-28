@@ -1,0 +1,33 @@
+  - content: |
+      #!/bin/sh
+      #/etc/init.d/e16
+      ### BEGIN INIT INFO
+      # Provides: e16
+      # Required-Start:    $network $remote_fs $syslog ntp docker
+      # Required-Stop:     $network $remote_fs $syslog ntp docker
+      # Default-Start:     2 3 4 5
+      # Default-Stop:
+      # Short-Description: The E16 docker instances
+      ### END INIT INFO
+      set -e
+      
+      export PATH="${PATH:+$PATH:}/usr/sbin:/sbin:/usr/bin:/usr/local/bin"
+
+      case "$1" in
+          start)
+          docker run --restart unless-stopped --detach --name watchtower -v /root/.docker/config.json:/config.json -v /var/run/docker.sock:/var/run/docker.sock v2tec/watchtower:armhf-latest  --cleanup
+          ;;
+          stop)
+          docker stop watchtower
+          docker rm watchtower
+          ;;
+          *)
+          echo "Usage: /etc/init.d/e16 {start|stop}"
+          exit 1
+          ;;
+      esac
+      
+      exit 0
+    path: /etc/init.d/e16
+    permissions: '0755'
+
