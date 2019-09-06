@@ -1,0 +1,2 @@
+swift build --destination /Library/Developer/Destinations/arm64-5.0.1-RELEASE.json
+docker build --tag localhost:6000/cscix65g/e16server:latest .

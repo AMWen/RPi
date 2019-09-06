@@ -1,0 +1,32 @@
+[2019-07-26T17:50:14.990Z] [INFO] [main.swift:34 Server] Starting Server
+[2019-07-26T17:50:15.016Z] [INFO] [main.swift:36 Server] Verifying shell availability.  Hostname = <ProcessResult: 1 "" stderr="/hostname: No such file or directory">
+[2019-07-26T17:50:15.030Z] [INFO] [SmokeHTTP1Server.swift:143 start()] SmokeHTTP1Server starting on port 8080.
+[2019-07-26T17:50:15.052Z] [INFO] [SmokeHTTP1Server.swift:195 start()] SmokeHTTP1Server started on port 8080.
+[2019-07-26T17:50:34.036Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:89 channelRead(ctx:data:)] Request head received.
+[2019-07-26T17:50:34.036Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:104 channelRead(ctx:data:)] Request body part of 26 bytes received.
+[2019-07-26T17:50:34.037Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:106 channelRead(ctx:data:)] Request end received.
+[2019-07-26T17:50:34.037Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:121 handleCompleteRequest(context:bodyData:)] Handling request body with 26 size.
+[2019-07-26T17:50:34.042Z] [INFO] [StandardSmokeHTTP1HandlerSelector.swift:70 getHandlerForOperation(_:httpMethod:)] Operation handler selected with uri '/ble', method 'POST'
+[2019-07-26T17:50:34.054Z] [INFO] [BluetoothService.swift:48 BluetoothService] Handling BluetoothService request: SmokeHTTP1RequestHead(httpRequestHead: HTTPRequestHead { method: POST, uri: "/ble", version: HTTP/1.1, headers: [("Host", "10.8.0.54:8080"), ("User-Agent", "curl/7.64.0"), ("Accept", "*/*"), ("Content-Type", "application/json; charset=utf-8"), ("Content-Length", "26")] }, query: "", pathShape: ShapeCoding.Shape.null)
+[2019-07-26T17:50:34.059Z] [INFO] [BluetoothService.swift:60 BluetoothService] Transforming BluetoothService Input: BluetoothInput(bluetoothState: "on")
+Trying BLEServer.setup()
+obtain Bluetooth Controller
+Bluetooth Controller: 43:45:C0:00:1F:AC
+GATTCustomServiceController
+PeripheralManager: Started GATT Server
+[2019-07-26T17:50:34.084Z] [INFO] [BluetoothService.swift:38 bluetoothState] bluetoothState didSet
+[2019-07-26T17:50:34.084Z] [INFO] [BluetoothService.swift:67 BluetoothService] Finished Transforming BluetoothService Input: BluetoothInput(bluetoothState: "on") to Output: BluetoothOutput(bluetoothState: "on")
+[2019-07-26T17:50:34.090Z] [INFO] [BluetoothService.swift:85 BluetoothService] Encoding BluetoothService Output: HTTP1ServerResponseComponents(additionalHeaders: [], body: Optional((contentType: "application/json", data: 2 bytes)))
+[2019-07-26T17:50:34.098Z] [INFO] [StandardHTTP1ResponseHandler.swift:49 complete(status:responseComponents:)] Http response send: status '200', body size '2'
+[2019-07-26T17:50:38.337Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:89 channelRead(ctx:data:)] Request head received.
+[2019-07-26T17:50:38.338Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:104 channelRead(ctx:data:)] Request body part of 26 bytes received.
+[2019-07-26T17:50:38.339Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:106 channelRead(ctx:data:)] Request end received.
+[2019-07-26T17:50:38.339Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:121 handleCompleteRequest(context:bodyData:)] Handling request body with 26 size.
+[2019-07-26T17:50:38.339Z] [INFO] [StandardSmokeHTTP1HandlerSelector.swift:70 getHandlerForOperation(_:httpMethod:)] Operation handler selected with uri '/ble', method 'POST'
+[2019-07-26T17:50:38.341Z] [INFO] [BluetoothService.swift:48 BluetoothService] Handling BluetoothService request: SmokeHTTP1RequestHead(httpRequestHead: HTTPRequestHead { method: POST, uri: "/ble", version: HTTP/1.1, headers: [("Host", "10.8.0.54:8080"), ("User-Agent", "curl/7.64.0"), ("Accept", "*/*"), ("Content-Type", "application/json; charset=utf-8"), ("Content-Length", "26")] }, query: "", pathShape: ShapeCoding.Shape.null)
+[2019-07-26T17:50:38.341Z] [INFO] [BluetoothService.swift:60 BluetoothService] Transforming BluetoothService Input: BluetoothInput(bluetoothState: "on")
+Trying BLEServer.setup()
+obtain Bluetooth Controller
+Bluetooth Controller: 43:45:C0:00:1F:AC
+GATTCustomServiceController
+PeripheralManager: Started GATT Server
