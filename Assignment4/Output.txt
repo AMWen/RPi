@@ -1,0 +1,220 @@
+[2019-07-31T12:53:27.704Z] [INFO] [main.swift:36 Server] Starting Server
+[2019-07-31T12:53:28.222Z] [INFO] [main.swift:37 Server] Verifying shell availability.  Hostname = <ProcessResult: 1 "" stderr="/hostname: No such file or directory">
+[2019-07-31T12:53:28.461Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:28.492Z] [INFO] [SmokeHTTP1Server.swift:143 start()] SmokeHTTP1Server starting on port 8080.
+[2019-07-31T12:53:28.538Z] [INFO] [SmokeHTTP1Server.swift:195 start()] SmokeHTTP1Server started on port 8080.
+[2019-07-31T12:53:28.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:28.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:29.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:29.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.44052734375
+[2019-07-31T12:53:29.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:29.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:29.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:30.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:30.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:30.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:30.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:30.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:31.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:31.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:31.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:31.644Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:89 channelRead(ctx:data:)] Request head received.
+[2019-07-31T12:53:31.645Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:104 channelRead(ctx:data:)] Request body part of 20 bytes received.
+[2019-07-31T12:53:31.646Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:106 channelRead(ctx:data:)] Request end received.
+[2019-07-31T12:53:31.646Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:121 handleCompleteRequest(context:bodyData:)] Handling request body with 20 size.
+[2019-07-31T12:53:31.651Z] [INFO] [StandardSmokeHTTP1HandlerSelector.swift:70 getHandlerForOperation(_:httpMethod:)] Operation handler selected with uri '/led', method 'POST'
+[2019-07-31T12:53:31.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:31.665Z] [INFO] [LEDService.swift:59 LEDService] Handling LEDService request: SmokeHTTP1RequestHead(httpRequestHead: HTTPRequestHead { method: POST, uri: "/led", version: HTTP/1.1, headers: [("Host", "10.8.0.54:8080"), ("User-Agent", "curl/7.64.0"), ("Accept", "*/*"), ("Content-Type", "text/plain; charset=utf-8"), ("Content-Length", "20")] }, query: "", pathShape: ShapeCoding.Shape.null)
+[2019-07-31T12:53:31.673Z] [INFO] [LEDService.swift:71 LEDService] Transforming LEDService Input: LEDInput(ledState: "on")
+[2019-07-31T12:53:31.674Z] [INFO] [LEDService.swift:81 LEDService] Finished Transforming LEDService Input: LEDInput(ledState: "on") to Output: LEDOutput(ledState: "on")
+[2019-07-31T12:53:31.680Z] [INFO] [LEDService.swift:99 LEDService] Encoding LEDService Output: HTTP1ServerResponseComponents(additionalHeaders: [], body: Optional((contentType: "application/json", data: 2 bytes)))
+[2019-07-31T12:53:31.691Z] [INFO] [StandardHTTP1ResponseHandler.swift:49 complete(status:responseComponents:)] Http response send: status '200', body size '2'
+[2019-07-31T12:53:31.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:32.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:32.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:32.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:32.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:32.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:33.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:33.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:33.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:33.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:33.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:34.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:34.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:34.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.44052734375
+[2019-07-31T12:53:34.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:34.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:35.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:35.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:35.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:35.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:35.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:36.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:36.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:36.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.44052734375
+[2019-07-31T12:53:36.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:36.802Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:89 channelRead(ctx:data:)] Request head received.
+[2019-07-31T12:53:36.802Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:104 channelRead(ctx:data:)] Request body part of 21 bytes received.
+[2019-07-31T12:53:36.803Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:106 channelRead(ctx:data:)] Request end received.
+[2019-07-31T12:53:36.803Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:121 handleCompleteRequest(context:bodyData:)] Handling request body with 21 size.
+[2019-07-31T12:53:36.803Z] [INFO] [StandardSmokeHTTP1HandlerSelector.swift:70 getHandlerForOperation(_:httpMethod:)] Operation handler selected with uri '/led', method 'POST'
+[2019-07-31T12:53:36.805Z] [INFO] [LEDService.swift:59 LEDService] Handling LEDService request: SmokeHTTP1RequestHead(httpRequestHead: HTTPRequestHead { method: POST, uri: "/led", version: HTTP/1.1, headers: [("Host", "10.8.0.54:8080"), ("User-Agent", "curl/7.64.0"), ("Accept", "*/*"), ("Content-Type", "text/plain; charset=utf-8"), ("Content-Length", "21")] }, query: "", pathShape: ShapeCoding.Shape.null)
+[2019-07-31T12:53:36.806Z] [INFO] [LEDService.swift:71 LEDService] Transforming LEDService Input: LEDInput(ledState: "off")
+[2019-07-31T12:53:36.807Z] [INFO] [LEDService.swift:81 LEDService] Finished Transforming LEDService Input: LEDInput(ledState: "off") to Output: LEDOutput(ledState: "off")
+[2019-07-31T12:53:36.808Z] [INFO] [LEDService.swift:99 LEDService] Encoding LEDService Output: HTTP1ServerResponseComponents(additionalHeaders: [], body: Optional((contentType: "application/json", data: 3 bytes)))
+[2019-07-31T12:53:36.812Z] [INFO] [StandardHTTP1ResponseHandler.swift:49 complete(status:responseComponents:)] Http response send: status '200', body size '3'
+[2019-07-31T12:53:36.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:37.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:37.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:37.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:37.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:37.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:38.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:38.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:38.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:38.607Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = false
+[2019-07-31T12:53:38.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:38.758Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = true
+[2019-07-31T12:53:38.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:39.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:39.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:39.342Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = false
+[2019-07-31T12:53:39.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.44052734375
+[2019-07-31T12:53:39.478Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = true
+[2019-07-31T12:53:39.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:39.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:40.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:40.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:40.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:40.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:40.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:41.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:41.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:41.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:41.504Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:89 channelRead(ctx:data:)] Request head received.
+[2019-07-31T12:53:41.505Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:104 channelRead(ctx:data:)] Request body part of 20 bytes received.
+[2019-07-31T12:53:41.506Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:106 channelRead(ctx:data:)] Request end received.
+[2019-07-31T12:53:41.507Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:121 handleCompleteRequest(context:bodyData:)] Handling request body with 20 size.
+[2019-07-31T12:53:41.507Z] [INFO] [StandardSmokeHTTP1HandlerSelector.swift:70 getHandlerForOperation(_:httpMethod:)] Operation handler selected with uri '/led', method 'POST'
+[2019-07-31T12:53:41.509Z] [INFO] [LEDService.swift:59 LEDService] Handling LEDService request: SmokeHTTP1RequestHead(httpRequestHead: HTTPRequestHead { method: POST, uri: "/led", version: HTTP/1.1, headers: [("Host", "10.8.0.54:8080"), ("User-Agent", "curl/7.64.0"), ("Accept", "*/*"), ("Content-Type", "text/plain; charset=utf-8"), ("Content-Length", "20")] }, query: "", pathShape: ShapeCoding.Shape.null)
+[2019-07-31T12:53:41.510Z] [INFO] [LEDService.swift:71 LEDService] Transforming LEDService Input: LEDInput(ledState: "on")
+[2019-07-31T12:53:41.511Z] [INFO] [LEDService.swift:81 LEDService] Finished Transforming LEDService Input: LEDInput(ledState: "on") to Output: LEDOutput(ledState: "on")
+[2019-07-31T12:53:41.512Z] [INFO] [LEDService.swift:99 LEDService] Encoding LEDService Output: HTTP1ServerResponseComponents(additionalHeaders: [], body: Optional((contentType: "application/json", data: 2 bytes)))
+[2019-07-31T12:53:41.516Z] [INFO] [StandardHTTP1ResponseHandler.swift:49 complete(status:responseComponents:)] Http response send: status '200', body size '2'
+[2019-07-31T12:53:41.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:41.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:42.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:42.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:42.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:42.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:42.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:43.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:43.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:43.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:43.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:43.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:44.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:44.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:44.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:44.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:44.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:45.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:45.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:45.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:45.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:45.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:46.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:46.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:46.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:46.641Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:89 channelRead(ctx:data:)] Request head received.
+[2019-07-31T12:53:46.642Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:104 channelRead(ctx:data:)] Request body part of 21 bytes received.
+[2019-07-31T12:53:46.643Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:106 channelRead(ctx:data:)] Request end received.
+[2019-07-31T12:53:46.643Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:121 handleCompleteRequest(context:bodyData:)] Handling request body with 21 size.
+[2019-07-31T12:53:46.643Z] [INFO] [StandardSmokeHTTP1HandlerSelector.swift:70 getHandlerForOperation(_:httpMethod:)] Operation handler selected with uri '/led', method 'POST'
+[2019-07-31T12:53:46.645Z] [INFO] [LEDService.swift:59 LEDService] Handling LEDService request: SmokeHTTP1RequestHead(httpRequestHead: HTTPRequestHead { method: POST, uri: "/led", version: HTTP/1.1, headers: [("Host", "10.8.0.54:8080"), ("User-Agent", "curl/7.64.0"), ("Accept", "*/*"), ("Content-Type", "text/plain; charset=utf-8"), ("Content-Length", "21")] }, query: "", pathShape: ShapeCoding.Shape.null)
+[2019-07-31T12:53:46.646Z] [INFO] [LEDService.swift:71 LEDService] Transforming LEDService Input: LEDInput(ledState: "off")
+[2019-07-31T12:53:46.646Z] [INFO] [LEDService.swift:81 LEDService] Finished Transforming LEDService Input: LEDInput(ledState: "off") to Output: LEDOutput(ledState: "off")
+[2019-07-31T12:53:46.647Z] [INFO] [LEDService.swift:99 LEDService] Encoding LEDService Output: HTTP1ServerResponseComponents(additionalHeaders: [], body: Optional((contentType: "application/json", data: 3 bytes)))
+[2019-07-31T12:53:46.649Z] [INFO] [StandardHTTP1ResponseHandler.swift:49 complete(status:responseComponents:)] Http response send: status '200', body size '3'
+[2019-07-31T12:53:46.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:46.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:47.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:47.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.44052734375
+[2019-07-31T12:53:47.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.36962890625
+[2019-07-31T12:53:47.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.2826171874999999
+[2019-07-31T12:53:47.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.16337890625
+[2019-07-31T12:53:48.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.0828125
+[2019-07-31T12:53:48.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.0828125
+[2019-07-31T12:53:48.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.0828125
+[2019-07-31T12:53:48.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.0828125
+[2019-07-31T12:53:48.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.18916015625
+[2019-07-31T12:53:49.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.33740234375
+[2019-07-31T12:53:49.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.3986328124999998
+[2019-07-31T12:53:49.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:49.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:49.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:50.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.405078125
+[2019-07-31T12:53:50.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.2955078125
+[2019-07-31T12:53:50.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.1859374999999999
+[2019-07-31T12:53:50.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.03125
+[2019-07-31T12:53:50.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.03125
+[2019-07-31T12:53:51.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.03125
+[2019-07-31T12:53:51.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.03125
+[2019-07-31T12:53:51.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.36962890625
+[2019-07-31T12:53:51.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:51.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:52.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:52.221Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = false
+[2019-07-31T12:53:52.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:52.388Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = true
+[2019-07-31T12:53:52.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:52.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:52.844Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = false
+[2019-07-31T12:53:52.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:53.020Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = true
+[2019-07-31T12:53:53.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:53.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:53.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:53.521Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = false
+[2019-07-31T12:53:53.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:53.711Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = true
+[2019-07-31T12:53:53.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:54.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:54.101Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = false
+[2019-07-31T12:53:54.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:54.281Z] [INFO] [GPIOInput.swift:44 handleGPIOInput()] isTouched = true
+[2019-07-31T12:53:54.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:54.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:54.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:55.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:55.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:55.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:55.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:55.850Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:89 channelRead(ctx:data:)] Request head received.
+[2019-07-31T12:53:55.851Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:104 channelRead(ctx:data:)] Request body part of 20 bytes received.
+[2019-07-31T12:53:55.851Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:106 channelRead(ctx:data:)] Request end received.
+[2019-07-31T12:53:55.852Z] [VERBOSE] [HTTP1ChannelInboundHandler.swift:121 handleCompleteRequest(context:bodyData:)] Handling request body with 20 size.
+[2019-07-31T12:53:55.852Z] [INFO] [StandardSmokeHTTP1HandlerSelector.swift:70 getHandlerForOperation(_:httpMethod:)] Operation handler selected with uri '/led', method 'POST'
+[2019-07-31T12:53:55.854Z] [INFO] [LEDService.swift:59 LEDService] Handling LEDService request: SmokeHTTP1RequestHead(httpRequestHead: HTTPRequestHead { method: POST, uri: "/led", version: HTTP/1.1, headers: [("Host", "10.8.0.54:8080"), ("User-Agent", "curl/7.64.0"), ("Accept", "*/*"), ("Content-Type", "text/plain; charset=utf-8"), ("Content-Length", "20")] }, query: "", pathShape: ShapeCoding.Shape.null)
+[2019-07-31T12:53:55.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:55.855Z] [INFO] [LEDService.swift:71 LEDService] Transforming LEDService Input: LEDInput(ledState: "on")
+[2019-07-31T12:53:55.855Z] [INFO] [LEDService.swift:81 LEDService] Finished Transforming LEDService Input: LEDInput(ledState: "on") to Output: LEDOutput(ledState: "on")
+[2019-07-31T12:53:55.856Z] [INFO] [LEDService.swift:99 LEDService] Encoding LEDService Output: HTTP1ServerResponseComponents(additionalHeaders: [], body: Optional((contentType: "application/json", data: 2 bytes)))
+[2019-07-31T12:53:55.859Z] [INFO] [StandardHTTP1ResponseHandler.swift:49 complete(status:responseComponents:)] Http response send: status '200', body size '2'
+[2019-07-31T12:53:56.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:56.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:56.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:56.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:56.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:57.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:57.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:57.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:57.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:57.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:58.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:58.255Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:58.455Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:58.655Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:58.855Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
+[2019-07-31T12:53:59.055Z] [INFO] [GPIOInput.swift:62 handleGPIOInput()] Potentiometer raw value is 1.4437499999999999
